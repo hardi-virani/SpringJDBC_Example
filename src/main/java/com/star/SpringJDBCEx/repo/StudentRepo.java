@@ -28,12 +28,14 @@ public class StudentRepo {
 //        System.out.println("Added..");
 
         String sql = "insert into student(rollno, name, marks) values(?,?,?)";
+
         int rows = jdbc.update(sql, s.getRollNo(), s.getName(), s.getMarks());
-        System.out.println(rows + "effected");
+        System.out.println(rows + " effected");
     }
 
     public List<Student> findAll() {
-        List<Student> students = new ArrayList<>();
-        return students;
+
+//        List<Student> students = new ArrayList<>();
+//        return students;
     }
 }
