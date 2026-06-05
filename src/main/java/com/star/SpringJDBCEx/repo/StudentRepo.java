@@ -44,9 +44,7 @@ public class StudentRepo {
         //Fetch the data
         String sql = "select * from student";
 
-        RowMapper<Student> mapper = new RowMapper<Student>() {
-            @Override
-            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+        return jdbc.query(sql,(rs, rowNum) -> {
 
                 Student s = new Student();
                 s.setRollNo(rs.getInt("rollno"));
@@ -54,9 +52,7 @@ public class StudentRepo {
                 s.setMarks(rs.getInt("marks"));
 
                 return s;
-            }
-        };
+        });
 
-        return jdbc.query(sql, mapper);
     }
 }
