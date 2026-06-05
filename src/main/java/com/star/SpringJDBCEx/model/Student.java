@@ -1,12 +1,18 @@
 package com.star.SpringJDBCEx.model;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
 @Component
+@Scope("prototype")
 public class Student {
 
+//    @Value("25")
     private int rollNo;
+
+//    @Value("Hardi")
     private String name;
     private int marks;
 
